@@ -1,5 +1,6 @@
 tool
 extends KinematicBody2D
+class_name Letter
 
 const LETTERS = {
 	'A': 0,
@@ -19,3 +20,16 @@ func _set_letter(new_letter):
 
 	$Sprite.region_rect = Rect2(LETTER_WIDTH * LETTERS[letter], 0, LETTER_WIDTH, LETTER_HEIGHT)
 	
+
+func _ready():
+	$Draggable.connect("picked", self, "_on_picked")
+	$Draggable.connect("dropped", self, "_on_dropped")
+	
+func drop(area:DropArea):
+	$Draggable.drop(area)
+	
+func _on_picked():
+	print("letter " + letter + " picked")
+	
+func _on_dropped(_area):
+	print("letter " + letter + " dropped")

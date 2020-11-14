@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Draggable",
 "language": "GDScript",
 "path": "res://components/draggable.gd"
+}, {
+"base": "Area2D",
+"class": "DropArea",
+"language": "GDScript",
+"path": "res://components/drop_area.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Letter",
+"language": "GDScript",
+"path": "res://letters/letter.gd"
 } ]
 _global_script_class_icons={
-"Draggable": ""
+"Draggable": "",
+"DropArea": "",
+"Letter": ""
 }
 
 [application]
@@ -49,6 +61,14 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+
+[input]
+
+mouse_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
 }
 
 [rendering]
