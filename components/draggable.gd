@@ -44,8 +44,6 @@ func drop(area:DropArea):
 	current_area.drop(self)	
 	
 	var parent = owner.get_parent()
-	var num_children = parent.get_child_count()
-	
 	parent.remove_child(owner)
 	parent.add_child(owner)
 	owner.z_index = 0

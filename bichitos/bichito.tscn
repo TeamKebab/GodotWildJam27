@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://bichitos/bichito.png" type="Texture" id=1]
+[ext_resource path="res://bichitos/StateMachine.gd" type="Script" id=2]
+[ext_resource path="res://bichitos/Idle.gd" type="Script" id=3]
+[ext_resource path="res://bichitos/bichito.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 18.3932
+
+[sub_resource type="Animation" id=1]
+resource_name = "Default"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[node name="Bichito" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Default = SubResource( 1 )
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource( 3 )

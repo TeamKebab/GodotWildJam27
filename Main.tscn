@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://work_area/work_area.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bichitos/bichito.tscn" type="PackedScene" id=2]
 [ext_resource path="res://target/word_target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
 
@@ -16,3 +17,5 @@ word = "BABAB"
 [node name="WorkArea" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 160 )
 word = "BABAB"
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 2 )]
