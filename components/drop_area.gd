@@ -15,6 +15,15 @@ func _set_shape(new_shape):
 
 export(bool) var snap_to_center: bool 
 
+var disabled: bool setget _set_disabled
+func _set_disabled(new_disabled):
+	if disabled == new_disabled:
+		return
+	
+	disabled = new_disabled
+	$CollisionShape2D.disabled = disabled
+
+
 var is_hovering: bool setget _set_is_hovering
 func _set_is_hovering(new_value):
 	if is_hovering == new_value:

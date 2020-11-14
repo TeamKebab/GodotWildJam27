@@ -1,7 +1,10 @@
+tool
 extends Node2D
 
-
-func _ready():
-	for child in get_children():
-		if child is KinematicBody2D:
-			child.drop($DropArea)
+export var word: String setget _set_word
+func _set_word(new_word):
+	word = new_word
+	
+	if $WordTarget != null and $WorkArea != null:
+		$WordTarget.word = word
+		$WorkArea.word = word

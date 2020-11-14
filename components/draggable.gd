@@ -17,7 +17,7 @@ func _set_shape(new_shape):
 	shape = new_shape
 	$CollisionShape2D.set_shape(shape)
 
-
+var hovering: bool
 var dragging: bool
 var current_area: DropArea
 var drop_position: Vector2
@@ -26,8 +26,10 @@ var closest_drop_area: DropArea
 
 
 func _ready():
-	connect("input_event", self, "_on_input_event")
-
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
+	
+	
 func drop(area:DropArea):
 	dragging = false
 	
@@ -35,30 +37,37 @@ func drop(area:DropArea):
 		current_area = area	
 		
 		if current_area.snap_to_center:
-			drop_position = current_area.global_position
+			drop_position = current_area.global_position			
 		else:
 			drop_position = owner.global_position
 	
 	current_area.drop(self)	
+	
+	var parent = owner.get_parent()
+	var num_children = parent.get_child_count()
+	
+	parent.remove_child(owner)
+	parent.add_child(owner)
+	owner.z_index = 0
+	
 	emit_signal("dropped", current_area) 
 	
-		
-func _on_input_event(_viewport, _event, _shape_idx):
-	if Engine.editor_hint:
-		return
 	
-	if Input.is_action_just_pressed("mouse_left"):
-		_picked()
+func _on_mouse_entered():
+	hovering = true
 
 
-func _input(event):
-	if Engine.editor_hint:
-		return
-	
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and not event.pressed:
-			if dragging:
-				_dropped()
+func _on_mouse_exited():
+	hovering = false
+
+
+func _unhandled_input(event):	
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
+		if hovering and event.is_pressed():
+			get_tree().set_input_as_handled()
+			_picked()
+		elif not event.pressed and dragging:
+			_dropped()
 
 
 func _picked():
@@ -67,6 +76,7 @@ func _picked():
 	
 	current_area.pick(self)
 	
+	owner.z_index = 100
 	emit_signal("picked")
 
 

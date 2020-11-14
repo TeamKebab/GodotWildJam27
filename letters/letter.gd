@@ -59,5 +59,6 @@ func _on_mouse_exited():
 func _on_picked():
 	print("letter " + letter + " picked")
 	
+	
 func _on_dropped(_area):
 	print("letter " + letter + " dropped")

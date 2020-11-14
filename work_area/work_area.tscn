@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://components/drop_area.tscn" type="PackedScene" id=1]
+[ext_resource path="res://work_area/work_area.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 500, 100 )
+
+[node name="WorkArea" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="DropArea" parent="." instance=ExtResource( 1 )]
+shape = SubResource( 1 )
+
+[node name="Letters" type="Node2D" parent="."]
