@@ -7,6 +7,7 @@ const LETTERS = {
 	'B': 1,
 	'C': 2
 }
+
 const LETTER_HEIGHT = 32
 const LETTER_WIDTH = 32
 
@@ -19,14 +20,41 @@ func _set_letter(new_letter):
 	letter = new_letter
 
 	$Sprite.region_rect = Rect2(LETTER_WIDTH * LETTERS[letter], 0, LETTER_WIDTH, LETTER_HEIGHT)
+
+var hovering = false setget _set_hovering
+func _set_hovering(new_hovering):
+	if hovering == new_hovering:
+		return
+		
+	hovering = new_hovering
 	
+	if hovering:
+		animation.play("Hover")
+	else:
+		animation.play_backwards("Hover")
+	
+onready var draggable = $Draggable
+onready var animation = $AnimationPlayer
 
 func _ready():
-	$Draggable.connect("picked", self, "_on_picked")
-	$Draggable.connect("dropped", self, "_on_dropped")
+	draggable.connect("picked", self, "_on_picked")
+	draggable.connect("dropped", self, "_on_dropped")
+	draggable.connect("mouse_entered", self, "_on_mouse_entered")
+	draggable.connect("mouse_exited", self, "_on_mouse_exited")
+
 	
 func drop(area:DropArea):
-	$Draggable.drop(area)
+	draggable.drop(area)
+	
+
+func _on_mouse_entered():
+	_set_hovering(true)
+	
+	
+func _on_mouse_exited():
+	if not draggable.dragging:
+		_set_hovering(false)
+	
 	
 func _on_picked():
 	print("letter " + letter + " picked")

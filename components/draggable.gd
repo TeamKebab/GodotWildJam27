@@ -17,9 +17,12 @@ func _set_shape(new_shape):
 	shape = new_shape
 	$CollisionShape2D.set_shape(shape)
 
+
 var dragging: bool
 var current_area: DropArea
 var drop_position: Vector2
+
+var closest_drop_area: DropArea
 
 
 func _ready():
@@ -77,7 +80,6 @@ func _dropped():
 		drop(drop_area)
 	
 
-
 func _find_closest(drop_areas):
 	var min_distance = 1000000
 	var closest: DropArea
@@ -97,5 +99,20 @@ func _physics_process(delta):
 	
 	if dragging:
 		owner.global_position = lerp(owner.global_position, get_global_mouse_position(), DRAG_SPEED * delta)
+		
+		var drop_areas = get_overlapping_areas()
+		
+		if drop_areas.empty():
+			if closest_drop_area != null:
+				closest_drop_area.is_hovering = false
+				closest_drop_area = null
+		else:
+			var closest = _find_closest(drop_areas)
+			
+			if closest != closest_drop_area:
+				if closest_drop_area != null:
+					closest_drop_area.is_hovering = false
+				closest_drop_area = closest
+				closest_drop_area.is_hovering = true
 	else:
 		owner.global_position = lerp(owner.global_position, drop_position, DROP_SPEED * delta)
