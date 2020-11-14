@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://components/draggable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://letters/letter.gd" type="Script" id=2]
+[ext_resource path="res://letters/font.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 15.0
+
+[node name="Letter" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[node name="Draggable" parent="." instance=ExtResource( 1 )]
+shape = SubResource( 1 )
