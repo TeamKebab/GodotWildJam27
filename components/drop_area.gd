@@ -7,6 +7,7 @@ signal item_picked(item)
 signal item_dropped(item)
 signal is_hovering_changed(is_hovering)
 
+var items: Array
 
 export(Shape2D) var shape: Shape2D setget _set_shape
 func _set_shape(new_shape):
@@ -34,9 +35,11 @@ func _set_is_hovering(new_value):
 	
 	
 func pick(item):
+	items.erase(item)
 	emit_signal("item_picked", item)
 	
 
 func drop(item):
+	items.append(item)
 	emit_signal("item_dropped", item)
 	

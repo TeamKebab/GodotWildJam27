@@ -3,6 +3,8 @@ extends KinematicBody2D
 
 const Poof = preload("res://bichitos/poof.tscn")
 
+var target
+
 func _ready():
 	connect("input_event", self, "_on_input_event")
 	

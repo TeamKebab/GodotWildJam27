@@ -36,6 +36,10 @@ config/name="GodotWildJam27"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Random="*res://globals/random.gd"
+
 [debug]
 
 gdscript/warnings/return_value_discarded=false

@@ -5,7 +5,7 @@
 [ext_resource path="res://target/word_target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Main.gd" type="Script" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
 position = Vector2( 512, 320 )
 script = ExtResource( 4 )
 word = "BABAB"

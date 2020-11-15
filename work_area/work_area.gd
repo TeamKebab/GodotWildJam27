@@ -6,10 +6,7 @@ const WIDTH = 500
 const HEIGHT = 200
 
 export var word: String setget _set_word
-func _set_word(new_word):
-	if word == new_word:
-		return
-	
+func _set_word(new_word):	
 	word = new_word
 	
 	for child in $Letters.get_children():
@@ -19,11 +16,20 @@ func _set_word(new_word):
 	for i in letters:
 		var letter = Letter.instance()
 		letter.letter = word[i]
-		letter.position.x = rand_range(-WIDTH / 2.0, WIDTH / 2.0)
-		letter.position.y = rand_range(-HEIGHT / 2.0, HEIGHT / 2.0)
+		letter.position = Random.position(Rect2(-WIDTH/2, -HEIGHT/2, WIDTH, HEIGHT))
 		$Letters.add_child(letter)
 
 
+onready var drop_area: DropArea = $DropArea
+
 func _ready():
 	for child in $Letters.get_children():
-		child.drop($DropArea)
+		child.drop(drop_area)
+
+
+func get_free_letters():
+	var letters: Array
+	for item in drop_area.items:
+		letters.append(item.owner)
+		
+	return letters
