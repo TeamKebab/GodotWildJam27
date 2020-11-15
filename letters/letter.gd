@@ -11,6 +11,11 @@ const LETTERS = {
 const LETTER_HEIGHT = 32
 const LETTER_WIDTH = 32
 
+
+signal picked(bichito)
+signal dropped
+
+
 export var letter:String = 'A' setget _set_letter 
 func _set_letter(new_letter):
 	if new_letter < 'A' or new_letter > 'C':
@@ -42,6 +47,10 @@ func _ready():
 	draggable.connect("mouse_entered", self, "_on_mouse_entered")
 	draggable.connect("mouse_exited", self, "_on_mouse_exited")
 
+
+func pick(bichito):
+	draggable.current_area.pick(draggable)
+	emit_signal("picked", bichito)
 	
 func drop(area:DropArea):
 	draggable.drop(area)
@@ -57,8 +66,9 @@ func _on_mouse_exited():
 	
 	
 func _on_picked():
-	print("letter " + letter + " picked")
-	
+	#print("letter " + letter + " picked")
+	emit_signal("picked", null)
 	
 func _on_dropped(_area):
-	print("letter " + letter + " dropped")
+	#print("letter " + letter + " dropped")
+	emit_signal("dropped")

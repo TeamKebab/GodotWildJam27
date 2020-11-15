@@ -50,6 +50,16 @@ func drop(area:DropArea):
 	
 	emit_signal("dropped", current_area) 
 	
+
+func pick():
+	dragging = true
+	drop_position = owner.global_position
+	
+	current_area.pick(self)
+	
+	owner.z_index = 100
+	emit_signal("picked")
+
 	
 func _on_mouse_entered():
 	hovering = true
@@ -63,29 +73,15 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		if hovering and event.is_pressed():
 			get_tree().set_input_as_handled()
-			_picked()
+			pick()
 		elif not event.pressed and dragging:
-			_dropped()
-
-
-func _picked():
-	dragging = true
-	drop_position = owner.global_position
-	
-	current_area.pick(self)
-	
-	owner.z_index = 100
-	emit_signal("picked")
-
-
-func _dropped():
-	var drop_areas = get_overlapping_areas()
-	
-	if drop_areas.empty():
-		drop(null)
-	else:
-		var drop_area = _find_closest(drop_areas)
-		drop(drop_area)
+			var drop_areas = get_overlapping_areas()
+			
+			if drop_areas.empty():
+				drop(null)
+			else:
+				var drop_area = _find_closest(drop_areas)
+				drop(drop_area)
 	
 
 func _find_closest(drop_areas):

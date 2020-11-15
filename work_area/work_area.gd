@@ -26,7 +26,7 @@ func _ready():
 	for child in $Letters.get_children():
 		child.drop(drop_area)
 
-
+	
 func get_free_letters():
 	var letters: Array
 	for item in drop_area.items:

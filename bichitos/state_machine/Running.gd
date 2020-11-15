@@ -27,8 +27,12 @@ func handle_input(_event):
 
 
 func update(delta):
+	if _bichito == null:
+		return
+		
 	if _bichito.target == null:
 		_state_machine._change_state("Idle")
+		return
 	
 	motion = motion.rotated(Random.randf_range(-max_rotation_speed, max_rotation_speed))
 	

@@ -25,3 +25,8 @@ func position(bounds: Rect2) -> Vector2:
 
 func randf_range(from: float, to: float):
 	return rng.randf_range(from, to)
+
+
+func direction() -> Vector2:
+	var angle = rng.randf_range(0, 2 * PI)
+	return Vector2.RIGHT.rotated(angle)
