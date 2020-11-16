@@ -62,6 +62,12 @@ jobs:
             with:
               name: linux
               path: build/linux
+          - name: Publish to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: linux
+              PACKAGE: build/linux
     
     export-web:
         name: Web Export
@@ -87,6 +93,12 @@ jobs:
             with:
               name: web
               path: build/web
+          - name: Publish to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: web
+              PACKAGE: build/web
     
     export-mac:
         name: Mac Export
@@ -112,4 +124,10 @@ jobs:
             with:
               name: mac
               path: build/mac
+          - name: Publish to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: mac
+              PACKAGE: build/mac
     
