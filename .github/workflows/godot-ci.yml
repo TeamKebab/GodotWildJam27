@@ -4,6 +4,7 @@ on: push
 env:
     GODOT_VERSION: 3.2.3
     EXPORT_NAME: save-the-hangman
+    ITCH_USERNAME: team-kebab
 
 jobs:
     export-windows:
@@ -30,7 +31,14 @@ jobs:
             with:
               name: windows
               path: build/windows
-
+          - name: Publish to Itch.io
+            uses: josephbmanley/butler-publish-itchio-action@master
+            env:
+              BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+              CHANNEL: windows
+              ITCH_GAME: $EXPORT_NAME
+              ITCH_USER: $ITCH_USERNAME
+              PACKAGE: build/windows
     export-linux:
         name: Linux Export
         runs-on: ubuntu-latest
