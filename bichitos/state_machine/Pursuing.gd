@@ -24,14 +24,8 @@ func handle_input(_event):
 
 
 func update(delta):
-	if _bichito.target == null:
-		_state_machine._change_state("Idle")
-		return
-	
 	_bichito.global_position = _bichito.global_position.move_toward(_bichito.target.global_position, speed * delta)
 
 	if _bichito.global_position == _bichito.target.global_position:	
-		_bichito.target.pick(_bichito)
-		_state_machine._change_state("Running")
-		
+		_bichito.pick()
 	

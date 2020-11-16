@@ -32,8 +32,7 @@ func update(delta):
 		
 	var free_letters: Array = _work_area.get_free_letters()
 	if not free_letters.empty():
-		_bichito.target = Random.choose(free_letters)
-		_state_machine._change_state("Pursuing")
+		_bichito.pursue(Random.choose(free_letters))
 		
 func _change_direction():
-	destination = Random.position(Rect2(Vector2.ZERO, _screen_size))
+	destination = Random.position(Rect2(-_screen_size/2, _screen_size))

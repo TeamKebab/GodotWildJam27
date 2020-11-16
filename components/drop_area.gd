@@ -33,13 +33,17 @@ func _set_is_hovering(new_value):
 	is_hovering = new_value
 	emit_signal("is_hovering_changed", is_hovering)	
 	
-	
+
+onready var id = "Drop Area " + String(Counter.new_drop_area())
+
+
 func pick(item):
 	items.erase(item)
 	emit_signal("item_picked", item)
 	
 
 func drop(item):
-	items.append(item)
-	emit_signal("item_dropped", item)
+	if not items.has(item):
+		items.append(item)
+		emit_signal("item_dropped", item)
 	

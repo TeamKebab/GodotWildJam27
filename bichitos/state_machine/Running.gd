@@ -19,7 +19,7 @@ func enter():
 
 # Clean up the state. Reinitialize values like a timer.
 func exit():
-	pass
+	_bichito.target.drop(null)
 
 
 func handle_input(_event):
@@ -27,13 +27,6 @@ func handle_input(_event):
 
 
 func update(delta):
-	if _bichito == null:
-		return
-		
-	if _bichito.target == null:
-		_state_machine._change_state("Idle")
-		return
-	
 	motion = motion.rotated(Random.randf_range(-max_rotation_speed, max_rotation_speed))
 	
 	_bichito.position = _bichito.position + motion * delta
@@ -44,6 +37,7 @@ func update(delta):
 		_bichito.global_position.y < -out_of_bounds_margin || \
 		_bichito.global_position.y > _screen_size.y + out_of_bounds_margin:
 			_go_to_center()
+
 
 func _go_to_center():
 	motion = _bichito.global_position.direction_to(_screen_size / 2) * speed	

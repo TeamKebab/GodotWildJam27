@@ -65,10 +65,15 @@ func _on_mouse_exited():
 		_set_hovering(false)
 	
 	
-func _on_picked():
-	#print("letter " + letter + " picked")
+func _on_picked():	
+	z_index = 100
 	emit_signal("picked", null)
 	
-func _on_dropped(_area):
-	#print("letter " + letter + " dropped")
+	
+func _on_dropped(_area):	
+	var parent = get_parent()
+	parent.remove_child(self)
+	parent.add_child(self)
+	z_index = 0
+	
 	emit_signal("dropped")

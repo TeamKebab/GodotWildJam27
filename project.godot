@@ -39,6 +39,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Random="*res://globals/random.gd"
+Counter="*res://globals/counter.gd"
 
 [debug]
 

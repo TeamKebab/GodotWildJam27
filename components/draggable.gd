@@ -43,11 +43,6 @@ func drop(area:DropArea):
 	
 	current_area.drop(self)	
 	
-	var parent = owner.get_parent()
-	parent.remove_child(owner)
-	parent.add_child(owner)
-	owner.z_index = 0
-	
 	emit_signal("dropped", current_area) 
 	
 
@@ -57,7 +52,6 @@ func pick():
 	
 	current_area.pick(self)
 	
-	owner.z_index = 100
 	emit_signal("picked")
 
 	
