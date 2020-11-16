@@ -17,6 +17,16 @@ func _set_shape(new_shape):
 	shape = new_shape
 	$CollisionShape2D.set_shape(shape)
 
+
+var disabled: bool setget _set_disabled
+func _set_disabled(new_disabled):
+	if disabled == new_disabled:
+		return
+	
+	disabled = new_disabled
+	$CollisionShape2D.disabled = disabled
+	
+	
 var hovering: bool
 var dragging: bool
 var current_area: DropArea

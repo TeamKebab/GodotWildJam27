@@ -47,15 +47,31 @@ func _ready():
 	draggable.connect("mouse_entered", self, "_on_mouse_entered")
 	draggable.connect("mouse_exited", self, "_on_mouse_exited")
 
-
+		
 func pick(bichito):
 	draggable.current_area.pick(draggable)
 	emit_signal("picked", bichito)
+
 	
 func drop(area:DropArea):
 	draggable.drop(area)
 	
 
+func is_placed() -> bool:
+	return draggable.current_area != null and draggable.current_area.owner is Target
+	
+	
+func turn():
+	if is_placed():
+		return
+	
+	rotation_degrees += 90
+	if rotation_degrees >= 360:
+		rotation_degrees -= 360
+	
+	draggable.disabled = rotation_degrees != 0
+	
+	
 func _on_mouse_entered():
 	_set_hovering(true)
 	
@@ -68,6 +84,7 @@ func _on_mouse_exited():
 func _on_picked():	
 	z_index = 100
 	emit_signal("picked", null)
+
 	
 	
 func _on_dropped(_area):	

@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "Letter",
 "language": "GDScript",
 "path": "res://letters/letter.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Target",
+"language": "GDScript",
+"path": "res://target/target.gd"
 } ]
 _global_script_class_icons={
 "Draggable": "",
 "DropArea": "",
-"Letter": ""
+"Letter": "",
+"Target": ""
 }
 
 [application]

@@ -11,6 +11,7 @@
 [node name="Level" type="Node2D" parent="."]
 position = Vector2( 512, 320 )
 script = ExtResource( 4 )
+rotation_enabled = true
 word = "BAC"
 
 [node name="WordTarget" parent="Level" instance=ExtResource( 3 )]
@@ -19,6 +20,7 @@ word = "BAC"
 
 [node name="WorkArea" parent="Level" instance=ExtResource( 1 )]
 position = Vector2( 0, 160 )
+rotation_enabled = true
 word = "BAC"
 
 [node name="BichitoSpawner" parent="Level" instance=ExtResource( 2 )]
