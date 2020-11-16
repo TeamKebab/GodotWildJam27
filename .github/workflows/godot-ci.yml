@@ -36,8 +36,8 @@ jobs:
             env:
               BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
               CHANNEL: windows
-              ITCH_GAME: $EXPORT_NAME
-              ITCH_USER: $ITCH_USERNAME
+              ITCH_GAME: ${{EXPORT_NAME}}
+              ITCH_USER: ${{ITCH_USERNAME}}
               PACKAGE: build/windows
     export-linux:
         name: Linux Export
