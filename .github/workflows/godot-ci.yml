@@ -4,7 +4,8 @@ on: push
 env:
     GODOT_VERSION: 3.2.3
     EXPORT_NAME: save-the-hangman
-    ITCH_USERNAME: team-kebab
+    ITCH_GAME: save-the-hangman
+    ITCH_USER: team-kebab
 
 jobs:
     export-windows:
@@ -36,8 +37,6 @@ jobs:
             env:
               BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
               CHANNEL: windows
-              ITCH_GAME: ${{EXPORT_NAME}}
-              ITCH_USER: ${{ITCH_USERNAME}}
               PACKAGE: build/windows
     export-linux:
         name: Linux Export
