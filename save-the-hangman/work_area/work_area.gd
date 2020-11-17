@@ -20,7 +20,7 @@ func _set_word(new_word):
 	for i in letters:
 		var letter = Letter.instance()
 		letter.letter = word[i]
-		letter.position = Random.position(Rect2(-WIDTH/2, -HEIGHT/2, WIDTH, HEIGHT))
+		letter.position = Random.position(Rect2(-WIDTH/2.0, -HEIGHT/2.0, WIDTH, HEIGHT))
 		$Letters.add_child(letter)
 
 onready var drop_area: DropArea = $DropArea
@@ -39,20 +39,20 @@ func _input(event):
 
 func init_rotation(letter):
 	if rotation_enabled:
-		for i in range(Random.randi(4)):
+		for _i in range(Random.randi(4)):
 			letter.turn()
 	else:
 		letter.rotation = 0
 
 
 func turn_letters(event_letter):
-	for child in drop_area.items:
-		if child.owner.letter == event_letter:
-			child.owner.turn()
+	for child in $Letters.get_children():
+		if child.letter == event_letter:
+			child.turn()
 
 
 func get_free_letters():
-	var letters: Array
+	var letters = []
 	for item in drop_area.items:
 		letters.append(item.owner)
 		

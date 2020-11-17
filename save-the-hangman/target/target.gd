@@ -17,7 +17,9 @@ func _ready():
 	$DropArea.connect("is_hovering_changed", self, "_on_is_hovering_changed")
 
 
-func pick_letter(_letter):
+func pick_letter(letter):
+	letter.disconnect("rotated", self, "_on_letter_rotated")
+	
 	current_letter = null
 	_drop_area.disabled = false
 	_animation.play("HoverIn")
@@ -28,13 +30,21 @@ func drop_letter(letter):
 	_drop_area.disabled = true
 	_animation.play_backwards("HoverIn")
 	
+	current_letter.connect("rotated", self, "_on_letter_rotated")
+	
 	if is_correct_letter():
 		emit_signal("correct_letter")
 		
 
 func is_correct_letter():
-	return current_letter != null and current_letter.letter == target_letter
+	return current_letter != null and current_letter.is_correct_letter(target_letter)
+
 	
+func _on_letter_rotated():
+	if is_correct_letter():
+		emit_signal("correct_letter")
+
+
 func _on_is_hovering_changed(is_hovering):
 	if is_hovering:
 		_animation.play("HoverIn")

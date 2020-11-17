@@ -14,7 +14,7 @@ const LETTER_WIDTH = 32
 
 signal picked(bichito)
 signal dropped
-
+signal rotated
 
 export var letter:String = 'A' setget _set_letter 
 func _set_letter(new_letter):
@@ -57,19 +57,16 @@ func drop(area:DropArea):
 	draggable.drop(area)
 	
 
-func is_placed() -> bool:
-	return draggable.current_area != null and draggable.current_area.owner is Target
+func is_correct_letter(target_letter) -> bool:
+	return rotation == 0 and target_letter == letter
 	
-	
-func turn():
-	if is_placed():
-		return
-	
+		
+func turn():	
 	rotation_degrees += 90
 	if rotation_degrees >= 360:
 		rotation_degrees -= 360
 	
-	draggable.disabled = rotation_degrees != 0
+	emit_signal("rotated")
 	
 	
 func _on_mouse_entered():

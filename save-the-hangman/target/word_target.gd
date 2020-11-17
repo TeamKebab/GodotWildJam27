@@ -38,5 +38,6 @@ func _on_letter_placed():
 	for child in get_children():
 		if not child.is_correct_letter():
 			return
-			
+		
 	print("correct word!")
+	emit_signal("completed_word")	

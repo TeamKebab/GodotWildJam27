@@ -48,7 +48,7 @@ func die():
 	queue_free()
 
 		
-func _on_input_event(_viewport, event, _shape_idx):
+func _on_input_event(_viewport, _event, _shape_idx):
 	if Input.is_action_pressed("mouse_left"):
 		die()
 

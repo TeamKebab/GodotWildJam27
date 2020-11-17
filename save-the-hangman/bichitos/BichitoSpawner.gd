@@ -24,7 +24,7 @@ func _spawn():
 	bichito.connect("died", self, "_on_bichito_died")
 	
 
-func _on_bichito_died(bichito):
+func _on_bichito_died(_bichito):
 	if _timer.is_stopped():
 		_timer.start()
 	
