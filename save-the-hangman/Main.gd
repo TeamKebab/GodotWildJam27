@@ -1,3 +1,4 @@
+tool
 extends Node2D
 
 export var rotation_enabled: bool setget _set_rotation_enabled
@@ -14,4 +15,3 @@ func _set_word(new_word):
 	if $WordTarget != null and $WorkArea != null:
 		$WordTarget.word = word
 		$WorkArea.word = word
-		

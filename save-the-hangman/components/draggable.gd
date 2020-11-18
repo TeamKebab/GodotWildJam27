@@ -92,6 +92,9 @@ func _find_closest(drop_areas):
 	var min_distance = 1000000
 	var closest: DropArea
 	
+	if drop_areas.size() == 1: 
+		return drop_areas[0]
+	
 	for drop_area in drop_areas:
 		var distance = owner.global_position.distance_squared_to(drop_area.global_position)
 		if distance < min_distance:

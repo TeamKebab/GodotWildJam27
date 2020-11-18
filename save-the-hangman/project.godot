@@ -25,6 +25,16 @@ _global_script_classes=[ {
 "path": "res://letters/letter.gd"
 }, {
 "base": "StaticBody2D",
+"class": "OneLetterSpace",
+"language": "GDScript",
+"path": "res://components/one_letter_space.gd"
+}, {
+"base": "StaticBody2D",
+"class": "RotationBlock",
+"language": "GDScript",
+"path": "res://work_area/rotation_block.gd"
+}, {
+"base": "StaticBody2D",
 "class": "Target",
 "language": "GDScript",
 "path": "res://target/target.gd"
@@ -33,6 +43,8 @@ _global_script_class_icons={
 "Draggable": "",
 "DropArea": "",
 "Letter": "",
+"OneLetterSpace": "",
+"RotationBlock": "",
 "Target": ""
 }
 

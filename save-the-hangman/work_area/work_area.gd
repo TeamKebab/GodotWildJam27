@@ -7,8 +7,6 @@ const HEIGHT = 200
 
 export var rotation_enabled: bool
 
-	
-
 export var word: String setget _set_word
 func _set_word(new_word):	
 	word = new_word
@@ -23,10 +21,14 @@ func _set_word(new_word):
 		letter.position = Random.position(Rect2(-WIDTH/2.0, -HEIGHT/2.0, WIDTH, HEIGHT))
 		$Letters.add_child(letter)
 
+
+onready var container: Node2D = $Letters
 onready var drop_area: DropArea = $DropArea
+onready var rotation_block = $RotationBlock
+
 
 func _ready():
-	for letter in $Letters.get_children():
+	for letter in container.get_children():
 		letter.drop(drop_area)
 		init_rotation(letter)
 
@@ -46,8 +48,8 @@ func init_rotation(letter):
 
 
 func turn_letters(event_letter):
-	for child in $Letters.get_children():
-		if child.letter == event_letter:
+	for child in container.get_children():
+		if child.letter == event_letter and not rotation_block.has_letter(child):
 			child.turn()
 
 
@@ -55,5 +57,7 @@ func get_free_letters():
 	var letters = []
 	for item in drop_area.items:
 		letters.append(item.owner)
+	if rotation_block.current_letter != null:
+		letters.append(rotation_block.current_letter)
 		
 	return letters
