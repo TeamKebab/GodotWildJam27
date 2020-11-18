@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const Bichito = preload("res://bichitos/bichito.tscn")
+const Bichito = preload("res://bichitos/bichito_primero.tscn")
 
 
 export var max_bichitos:int = 3

@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 const Poof = preload("res://bichitos/poof.tscn")
 
-
 signal died
 
 var target setget _set_target
@@ -23,9 +22,15 @@ func _set_target(new_target):
 onready var id : int = Counter.new_bichito()
 onready var _state_machine = $StateMachine	
 
+onready var _work_area = find_parent("Level").find_node("WorkArea")
+
 func _ready():
 	connect("input_event", self, "_on_input_event")
 	
+
+func get_available_letters() -> Array:
+	return []
+
 
 func pursue(new_target):
 	_set_target(new_target)
@@ -33,8 +38,7 @@ func pursue(new_target):
 
 
 func pick():
-	target.pick(self)
-	_state_machine._change_state("Running")
+	pass
 	
 
 func die():

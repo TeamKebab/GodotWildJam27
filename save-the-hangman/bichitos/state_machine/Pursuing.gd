@@ -8,8 +8,6 @@ onready var _state_machine = get_parent()
 onready var _bichito = _state_machine.get_parent()
 onready var _animation = _bichito.find_node("AnimationPlayer")
 
-onready var _work_area = find_parent("Level").find_node("WorkArea")
-
 # Initialize the state. E.g. change the animation.
 func enter():
 	_animation.play("Default")

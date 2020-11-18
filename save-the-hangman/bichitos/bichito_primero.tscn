@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://bichitos/bichito.tscn" type="PackedScene" id=1]
+[ext_resource path="res://bichitos/state_machine/Running.gd" type="Script" id=2]
+[ext_resource path="res://bichitos/bichito_primero.gd" type="Script" id=3]
+[ext_resource path="res://bichitos/bichito.png" type="Texture" id=4]
+
+[node name="BichitoPrimero" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 4 )
+
+[node name="Running" type="Node" parent="StateMachine" index="2"]
+script = ExtResource( 2 )
