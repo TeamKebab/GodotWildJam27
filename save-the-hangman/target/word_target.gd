@@ -32,7 +32,16 @@ func _set_word(new_word):
 func _ready():
 	for child in get_children():
 		child.connect("correct_letter", self, "_on_letter_placed")
-		
+
+
+func get_letters() -> Array:
+	var letters = []		
+	for child in get_children():
+		if child.current_letter != null:
+			letters.append(child.current_letter)
+	
+	return letters
+	
 
 func _on_letter_placed():
 	for child in get_children():

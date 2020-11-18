@@ -53,11 +53,17 @@ func turn_letters(event_letter):
 			child.turn()
 
 
+func get_rotation_locked_letters():
+	var letters = []
+	if rotation_block.current_letter != null:
+		letters.append(rotation_block.current_letter)
+		
+	return letters
+
+
 func get_free_letters():
 	var letters = []
 	for item in drop_area.items:
 		letters.append(item.owner)
-	if rotation_block.current_letter != null:
-		letters.append(rotation_block.current_letter)
 		
 	return letters

@@ -12,11 +12,13 @@ func _set_target(new_target):
 	
 	if target != null:	
 		target.disconnect("picked", self, "_on_target_picked")
+		target.disconnect("rotated", self, "_on_target_rotated")
 	
 	target = new_target
 	
 	if target != null:
 		target.connect("picked", self, "_on_target_picked")
+		target.connect("rotated", self, "_on_target_rotated")
 	
 
 onready var id : int = Counter.new_bichito()
@@ -64,3 +66,7 @@ func _on_target_picked(bichito):
 	if bichito != self:
 		_state_machine._change_state("Idle")
 		_set_target(null)
+
+
+func _on_target_rotated():
+	pass
