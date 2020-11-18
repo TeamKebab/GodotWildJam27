@@ -15,13 +15,11 @@ func _ready():
 func pick_letter(letter):
 	current_letter = null
 	_drop_area.disabled = false
-	_animation.play("HoverIn")
 	
 	
 func drop_letter(letter):
 	current_letter = letter.owner
 	_drop_area.disabled = true
-	_animation.play_backwards("HoverIn")
 
 
 func _on_is_hovering_changed(is_hovering):

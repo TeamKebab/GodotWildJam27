@@ -126,4 +126,8 @@ func _physics_process(delta):
 				closest_drop_area = closest
 				closest_drop_area.is_hovering = true
 	else:
+		if closest_drop_area !=  null:
+			closest_drop_area.is_hovering = false
+			closest_drop_area = null
+			
 		owner.global_position = lerp(owner.global_position, drop_position, DROP_SPEED * delta)
