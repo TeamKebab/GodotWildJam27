@@ -1,5 +1,5 @@
 tool
-extends Node2D
+extends Node
 
 export var rotation_enabled: bool setget _set_rotation_enabled
 func _set_rotation_enabled(value):

@@ -18,7 +18,7 @@ func _set_word(new_word):
 	for i in letters:
 		var letter = Letter.instance()
 		letter.letter = word[i]
-		letter.position = Random.position(Rect2(-WIDTH/2.0, -HEIGHT/2.0, WIDTH, HEIGHT))
+		letter.position = _random_position()
 		$Letters.add_child(letter)
 
 
@@ -38,7 +38,15 @@ func _input(event):
 		var event_letter = char(event.unicode).to_upper()
 		turn_letters(event_letter)
 
+func random_position():
+	return global_position + _random_position()
+	
+	
+func _random_position():
+	return Random.position(Rect2(-WIDTH/2.0, -HEIGHT/2.0, WIDTH, HEIGHT))
+	
 
+	
 func init_rotation(letter):
 	if rotation_enabled:
 		for _i in range(Random.randi(4)):
