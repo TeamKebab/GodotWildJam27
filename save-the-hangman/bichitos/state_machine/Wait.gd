@@ -1,6 +1,7 @@
 extends "res://components/state_machine/state.gd"
 
 export var time: float = 1
+export var speed: int = 50
 
 var destination: Vector2
 
@@ -29,7 +30,7 @@ func handle_input(_event):
 
 
 func update(delta):
-	_bichito.position = _bichito.position.move_toward(destination, 50 * delta)
+	_bichito.position = _bichito.position.move_toward(destination, speed * delta)
 
 	if _bichito.position == destination:
 		_change_direction()

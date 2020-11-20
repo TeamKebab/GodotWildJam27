@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name BichitoSpawner
 
 export(PackedScene) var bichito_scene
 export var max_bichitos:int = 3
@@ -13,7 +13,13 @@ onready var _timer = $Timer
 func _ready():
 	_timer.connect("timeout", self, "_on_timer_timeout")
 	
-	
+
+func destroy():
+	_timer.disconnect("timeout", self, "_on_timer_timeout")
+	for bichito in _container.get_children():
+		bichito.die()
+
+
 func _spawn():
 	var bichito = bichito_scene.instance()
 	bichito.global_position = _screen_size.abs() * Random.direction()

@@ -5,11 +5,24 @@ class_name Letter
 const LETTERS = {
 	'A': 0,
 	'B': 1,
-	'C': 2
+	'C': 2,
+	'D': 3,
+	'E': 4,
+	'G': 5,
+	'H': 6,
+	'I': 7,
+	'L': 8,
+	'N': 9,
+	'O': 10,
+	'P': 11,
+	'R': 12,
+	'S': 13,
+	'T': 14,
+	'U': 15,
 }
 
-const LETTER_HEIGHT = 32
-const LETTER_WIDTH = 32
+const LETTER_HEIGHT = 48
+const LETTER_WIDTH = 48
 
 
 signal picked(bichito)
@@ -18,7 +31,7 @@ signal rotated
 
 export var letter:String = 'A' setget _set_letter 
 func _set_letter(new_letter):
-	if new_letter < 'A' or new_letter > 'C':
+	if not LETTERS.has(new_letter):
 		print("invalid letter " + new_letter)
 		return
 		

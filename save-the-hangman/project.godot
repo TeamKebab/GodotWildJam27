@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node2D",
+"class": "BichitoSpawner",
+"language": "GDScript",
+"path": "res://bichitos/bichito_spawner.gd"
+}, {
 "base": "Area2D",
 "class": "Draggable",
 "language": "GDScript",
@@ -40,6 +45,7 @@ _global_script_classes=[ {
 "path": "res://target/target.gd"
 } ]
 _global_script_class_icons={
+"BichitoSpawner": "",
 "Draggable": "",
 "DropArea": "",
 "Letter": "",
@@ -51,13 +57,14 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotWildJam27"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://levels/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Random="*res://globals/random.gd"
 Counter="*res://globals/counter.gd"
+SceneLoader="*res://globals/scene_loader.gd"
 
 [debug]
 
@@ -99,4 +106,5 @@ mouse_left={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.886275, 0.815686, 0.690196, 1 )
 environment/default_environment="res://default_env.tres"

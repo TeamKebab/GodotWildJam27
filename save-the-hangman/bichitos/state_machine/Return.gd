@@ -1,5 +1,7 @@
 extends "res://components/state_machine/state.gd"
 
+export var speed: int = 50
+
 var destination: Vector2
 
 
@@ -18,7 +20,7 @@ func exit():
 	
 	
 func update(delta):
-	_bichito.global_position = _bichito.global_position.move_toward(destination, 50 * delta)	
+	_bichito.global_position = _bichito.global_position.move_toward(destination, speed * delta)	
 	_bichito.target.global_position = _bichito.global_position
 	
 	if _bichito.global_position == destination:	

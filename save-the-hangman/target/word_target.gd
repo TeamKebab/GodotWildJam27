@@ -4,7 +4,7 @@ extends Node2D
 
 const Target = preload("res://target/target.tscn")
 
-const LETTER_WIDTH = 32
+const LETTER_WIDTH = 48
 const LETTER_SPACE = 6
 
 signal completed_word
@@ -22,7 +22,9 @@ func _set_word(new_word):
 	var num_letters = word.length()
 	
 	for i in num_letters:
-		print(word[i])
+		if word[i] == " ":
+			continue
+			
 		var target = Target.instance()
 		target.target_letter = word[i]
 		target.position.x = (i - (num_letters - 1.0) / 2) * (LETTER_WIDTH + LETTER_SPACE)

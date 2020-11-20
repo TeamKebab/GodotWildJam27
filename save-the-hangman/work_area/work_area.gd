@@ -16,6 +16,8 @@ func _set_word(new_word):
 	
 	var letters = word.length()
 	for i in letters:
+		if word[i] == " ":
+			continue
 		var letter = Letter.instance()
 		letter.letter = word[i]
 		letter.position = _random_position()

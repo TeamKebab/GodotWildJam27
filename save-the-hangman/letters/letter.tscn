@@ -5,7 +5,7 @@
 [ext_resource path="res://letters/font.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 15.0
+radius = 35.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "Hover"
@@ -62,7 +62,7 @@ __meta__ = {
 modulate = Color( 0.627451, 0.627451, 0.627451, 1 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 32, 32 )
+region_rect = Rect2( 0, 0, 48, 48 )
 
 [node name="Draggable" parent="." instance=ExtResource( 1 )]
 modulate = Color( 1, 1, 1, 0.176471 )

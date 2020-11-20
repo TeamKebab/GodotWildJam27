@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level.gd" type="Script" id=2]
+
+[node name="Level" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="WordTarget" parent="." index="0"]
+position = Vector2( 512, 200 )
+word = "THE DUST BUNNIES"
+
+[node name="WorkArea" parent="." index="1"]
+position = Vector2( 512, 480 )
+word = "THE DUST BUNNIES"
+
+[node name="LevelComplete" parent="." index="6"]
+level_num = 5

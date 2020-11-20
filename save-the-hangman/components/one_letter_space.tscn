@@ -4,7 +4,7 @@
 [ext_resource path="res://components/one_letter_space.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 20.0
+radius = 30.0
 
 [sub_resource type="Animation" id=2]
 length = 0.5
@@ -58,10 +58,10 @@ shape = SubResource( 1 )
 snap_to_center = true
 
 [node name="Highlight" type="ColorRect" parent="."]
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 16.0
-margin_bottom = 16.0
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 24.0
+margin_bottom = 24.0
 mouse_filter = 2
 color = Color( 1, 1, 1, 0 )
 __meta__ = {

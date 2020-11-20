@@ -2,6 +2,8 @@ extends "res://components/state_machine/state.gd"
 
 var destination: Vector2
 
+export var speed = 50
+
 onready var _screen_size = get_viewport().size
 
 onready var _state_machine = get_parent()
@@ -23,7 +25,7 @@ func handle_input(_event):
 
 
 func update(delta):
-	_bichito.position = _bichito.position.move_toward(destination, 50 * delta)
+	_bichito.position = _bichito.position.move_toward(destination, speed * delta)
 
 	if _bichito.position == destination:
 		_change_direction()

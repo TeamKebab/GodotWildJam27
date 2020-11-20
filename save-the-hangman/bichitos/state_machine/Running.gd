@@ -1,7 +1,7 @@
 extends "res://components/state_machine/state.gd"
 
 export var speed: int = 200
-export var out_of_bounds_margin: int = 50
+export var out_of_bounds_margin: int = -50
 export var max_rotation_speed: float = 0.3
 
 var motion = Vector2.ZERO
