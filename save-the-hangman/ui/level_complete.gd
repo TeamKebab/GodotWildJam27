@@ -2,17 +2,20 @@ extends Node
 
 export var level_num = 1
 var can_advance = false
+var start_time
 
 onready var control = $Control
 onready var level_label = find_node("Cleared")
 onready var time_label = find_node("Time")
 onready var press_any_key = find_node("PressAnyKey")
-onready var start_time = OS.get_ticks_msec()
 
 
 func _ready():
 	level_label.text = "Level " + str(level_num) + " cleared"
-	
+
+
+func start():
+	start_time = OS.get_ticks_msec()
 	
 func show_time():
 	var time = (OS.get_ticks_msec() - start_time) / 1000
