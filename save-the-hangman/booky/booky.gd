@@ -19,6 +19,8 @@ onready var blink_animation = $BlinkAnimation
 
 onready var talk_timer = $TalkTimer
 onready var mouth = $Mouth
+onready var talking_sound = $TalkingSound
+
 
 func _ready():
 	look_around_timer.connect("timeout", self, "look_somewhere")
@@ -53,10 +55,12 @@ func blink():
 
 func start_talking():
 	talk_timer.start()
+	talking_sound.play()
 	
 	
 func stop_talking():
 	talk_timer.stop()
+	talking_sound.stop()
 	mouth.frame = 3
 	
 	

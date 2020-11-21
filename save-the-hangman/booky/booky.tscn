@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://booky/booky.png" type="Texture" id=1]
 [ext_resource path="res://booky/booky.gd" type="Script" id=2]
 [ext_resource path="res://booky/booky_blink.tres" type="Animation" id=3]
+[ext_resource path="res://booky/booky_talking.wav" type="AudioStream" id=4]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=4]
 resource_name = "LookDown"
 length = 0.1
 tracks/0/type = "bezier"
@@ -28,7 +29,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=5]
 resource_name = "LookFront"
 length = 0.1
 tracks/0/type = "bezier"
@@ -76,8 +77,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "LookRight"
+[sub_resource type="Animation" id=6]
 length = 0.1
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Eyes:position:x")
@@ -100,8 +100,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1 )
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "LookUp"
+[sub_resource type="Animation" id=7]
 length = 0.1
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("Eyes:position:x")
@@ -152,11 +151,11 @@ region_enabled = true
 region_rect = Rect2( 600, 0, 400, 100 )
 
 [node name="LookAroundAnimation" type="AnimationPlayer" parent="."]
-anims/LookDown = SubResource( 1 )
-anims/LookFront = SubResource( 2 )
+anims/LookDown = SubResource( 4 )
+anims/LookFront = SubResource( 5 )
 anims/LookLeft = SubResource( 3 )
-anims/LookRight = SubResource( 4 )
-anims/LookUp = SubResource( 5 )
+anims/LookRight = SubResource( 6 )
+anims/LookUp = SubResource( 7 )
 
 [node name="LookAroundTimer" type="Timer" parent="."]
 one_shot = true
@@ -169,3 +168,6 @@ one_shot = true
 
 [node name="TalkTimer" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="TalkingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )

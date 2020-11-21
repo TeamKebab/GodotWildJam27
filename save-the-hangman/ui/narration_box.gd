@@ -12,6 +12,7 @@ var current_line = 0
 onready var text_label = find_node("TextLabel")
 onready var next_line = find_node("NextLine")
 onready var booky = find_node("Booky")
+onready var next_sound = $NextSound
 
 func _ready():
 	start_line()
@@ -20,6 +21,7 @@ func _ready():
 func _input(event):
 	if can_advance:
 		if event is InputEventKey or event is InputEventMouseButton:
+			next_sound.play()
 			next_line()
 
 

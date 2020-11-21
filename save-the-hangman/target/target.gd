@@ -7,6 +7,7 @@ signal correct_letter
 export var target_letter = 'A'
 
 onready var drop_area = $DropArea
+onready var drop_sound = $DropSound
 
 func _ready():
 	drop_area.connect("item_picked", self, "_on_item_picked")
@@ -27,6 +28,7 @@ func _on_item_picked(letter):
 
 
 func _on_item_dropped(letter):	
+	drop_sound.play()
 	letter.owner.connect("rotated", self, "_on_letter_rotated")
 	
 	if is_correct_letter():

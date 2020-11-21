@@ -54,6 +54,7 @@ func _set_hovering(new_hovering):
 	
 onready var draggable = $Draggable
 onready var animation = $AnimationPlayer
+onready var drag_sound = $DragSound
 
 func _ready():
 	draggable.connect("picked", self, "_on_picked")
@@ -93,6 +94,7 @@ func _on_mouse_exited():
 	
 	
 func _on_picked():	
+	drag_sound.play()
 	z_index = 100
 	emit_signal("picked", null)
 
