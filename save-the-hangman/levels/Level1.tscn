@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://ui/level_complete.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bichitos/bichito_spawner.tscn" type="PackedScene" id=2]
@@ -9,9 +9,11 @@
 [ext_resource path="res://Debug.gd" type="Script" id=7]
 [ext_resource path="res://ui/narration_box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/book.png" type="Texture" id=9]
+[ext_resource path="res://levels/variation_1.ogg" type="AudioStream" id=10]
 
 [node name="Level" type="Node"]
 script = ExtResource( 4 )
+music = ExtResource( 10 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0

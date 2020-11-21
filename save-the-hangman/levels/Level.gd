@@ -1,5 +1,6 @@
 extends Node
 
+export(AudioStreamOGGVorbis) var music
 
 onready var level_complete = $LevelComplete
 onready var word_target = $WordTarget
@@ -7,6 +8,7 @@ onready var work_area = $WorkArea
 
 func _ready():
 	word_target.connect("completed_word", self, "_on_completed_word")
+	Music.continue_playing(music)
 
 
 func start():

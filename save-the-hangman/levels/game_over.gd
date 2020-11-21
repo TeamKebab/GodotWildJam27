@@ -20,6 +20,8 @@ func _ready():
 	var minutes = Counter.time / 60
 	var seconds = Counter.time - minutes * 60
 	time_label.text = str(minutes) + ":" + str(seconds).pad_zeros(2)
+	
+	Music.play_from_start(load("res://levels/overworld_3.ogg"))
 
 func _on_narration_finished():
 	yield(get_tree().create_timer(1), "timeout")

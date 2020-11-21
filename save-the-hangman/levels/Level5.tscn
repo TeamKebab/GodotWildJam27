@@ -1,16 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level.gd" type="Script" id=2]
+[ext_resource path="res://levels/variation_5.ogg" type="AudioStream" id=3]
 
 [node name="Level" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+music = ExtResource( 3 )
 
 [node name="WordTarget" parent="." index="1"]
 word = "THE DUST BUNNIES"
 
 [node name="WorkArea" parent="." index="2"]
+position = Vector2( 512, 480 )
 word = "THE DUST BUNNIES"
 
 [node name="NarrationBox" parent="." index="7"]
+margin_bottom = 148.0
 lines = [ "text 1", "text 2", "text 3", "text 4", "Who is trying to steal our words?" ]
 
 [node name="LevelComplete" parent="." index="8"]
