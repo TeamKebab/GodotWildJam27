@@ -10,16 +10,16 @@
 [ext_resource path="res://ui/Retro4.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://work_area/gameover_work_area.gd" type="Script" id=9]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 509.886, 5.29836 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 300, 10 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 50, 50 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=4]
 length = 0.3
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("NarrationBox:modulate:a")
@@ -32,26 +32,26 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 )
 }
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 32
 outline_size = 3
 outline_color = Color( 0.270588, 0.156863, 0.235294, 1 )
 font_data = ExtResource( 8 )
 
-[sub_resource type="Theme" id=8]
-default_font = SubResource( 7 )
+[sub_resource type="Theme" id=6]
+default_font = SubResource( 5 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=7]
 size = 96
 outline_size = 6
 outline_color = Color( 0.270588, 0.156863, 0.235294, 1 )
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=8]
 size = 32
 font_data = ExtResource( 8 )
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=9]
 resource_name = "PressAnyKey"
 length = 2.0
 loop = true
@@ -126,24 +126,24 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
 position = Vector2( 0, -294.529 )
 rotation = 3.14159
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
 position = Vector2( -1.57254, 293.435 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Bounds"]
 position = Vector2( 505, 0 )
 rotation = 4.71239
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Bounds"]
 position = Vector2( -505, 1.41422 )
 rotation = 1.5708
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 one_way_collision = true
 
 [node name="Booky" type="KinematicBody2D" parent="."]
@@ -155,10 +155,10 @@ script = ExtResource( 6 )
 [node name="Booky" parent="Booky" instance=ExtResource( 1 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Booky"]
-shape = SubResource( 11 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/NarrationFadeOut = SubResource( 12 )
+anims/NarrationFadeOut = SubResource( 4 )
 
 [node name="NarrationBox" parent="." instance=ExtResource( 3 )]
 margin_bottom = 168.0
@@ -188,7 +188,7 @@ margin_top = 150.0
 margin_right = 673.0
 margin_bottom = 580.0
 size_flags_horizontal = 4
-theme = SubResource( 8 )
+theme = SubResource( 6 )
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/TimeContainer"]
@@ -202,7 +202,7 @@ align = 1
 margin_top = 177.0
 margin_right = 322.0
 margin_bottom = 253.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 7 )
 text = "10:13"
 align = 1
 
@@ -221,7 +221,7 @@ margin_right = 637.0
 margin_bottom = 580.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Press any key to continue"
 align = 1
@@ -232,4 +232,4 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MarginContainer"]
 autoplay = "PressAnyKey"
-anims/PressAnyKey = SubResource( 15 )
+anims/PressAnyKey = SubResource( 9 )
