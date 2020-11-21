@@ -15,7 +15,7 @@ shape = SubResource( 1 )
 
 [node name="RotationBlock" parent="." instance=ExtResource( 3 )]
 visible = false
-position = Vector2( 465.049, -141.653 )
+position = Vector2( 420.633, -293.847 )
 disabled = true
 
 [node name="Letters" type="Node2D" parent="."]

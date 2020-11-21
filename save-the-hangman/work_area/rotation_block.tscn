@@ -5,7 +5,7 @@
 [ext_resource path="res://work_area/rotation_block.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 30.0
+radius = 70.0
 
 [node name="RotationBlock" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
