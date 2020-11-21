@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://ui/level_complete.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bichitos/bichito_spawner.tscn" type="PackedScene" id=2]
@@ -7,12 +7,23 @@
 [ext_resource path="res://bichitos/bichito_primero.tscn" type="PackedScene" id=5]
 [ext_resource path="res://target/word_target.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Debug.gd" type="Script" id=7]
+[ext_resource path="res://ui/narration_box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://ui/book.png" type="Texture" id=9]
 
 [node name="Level" type="Node"]
 script = ExtResource( 4 )
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="WordTarget" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 200 )
+position = Vector2( 512, 300 )
 word = "PAGE"
 
 [node name="WorkArea" parent="." instance=ExtResource( 3 )]
@@ -51,5 +62,9 @@ margin_bottom = 560.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NarrationBox" parent="." instance=ExtResource( 8 )]
+margin_bottom = 148.0
+lines = [ "The dust bunnies are trying to steal the words from our favorite book! We have to stop them swiftly!", "In order to stop them, we have to answer questions with the letters they are trying to steal.", "Just try to drag and drop letters to form the answer!", "1st question: where are we?" ]
 
 [node name="LevelComplete" parent="." instance=ExtResource( 1 )]

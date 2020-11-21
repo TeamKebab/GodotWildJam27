@@ -16,6 +16,24 @@ func choose(list: Array):
 	return list[index]
 
 
+func shuffle_word(word: String):
+	var list = []
+	for i in word:
+		list.append(i)
+	
+	if list.empty():
+		return list
+	
+	var shuffled = []
+	
+	for _i in range(list.size()):
+		var letter = choose(list)
+		list.erase(letter)
+		shuffled.append(letter)
+	
+	return shuffled
+	
+	
 func position(bounds: Rect2) -> Vector2:
 	var x = rng.randi_range(bounds.position.x, bounds.end.x)
 	var y = rng.randi_range(bounds.position.y, bounds.end.y)

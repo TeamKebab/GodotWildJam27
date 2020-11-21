@@ -7,9 +7,11 @@
 [node name="Level" instance=ExtResource( 3 )]
 
 [node name="WordTarget" parent="." index="0"]
+position = Vector2( 512, 200 )
 word = "CHAPTER"
 
 [node name="WorkArea" parent="." index="1"]
+position = Vector2( 512, 480 )
 rotation_enabled = true
 word = "CHAPTER"
 
@@ -17,5 +19,8 @@ word = "CHAPTER"
 bichito_scene = ExtResource( 1 )
 max_bichitos = 2
 
-[node name="LevelComplete" parent="." index="6"]
+[node name="NarrationBox" parent="." index="6"]
+lines = [ "text 1", "text 2", "text 3", "text 4", "Those things that show up in the index" ]
+
+[node name="LevelComplete" parent="." index="7"]
 level_num = 3

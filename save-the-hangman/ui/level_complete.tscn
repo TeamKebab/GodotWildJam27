@@ -3,7 +3,7 @@
 [ext_resource path="res://ui/Retro4.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/level_complete.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 resource_name = "PressAnyKey"
 length = 2.0
 loop = true
@@ -48,12 +48,12 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1, 2 )
 }
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=2]
 size = 72
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=6]
-default_font = SubResource( 5 )
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 32
@@ -65,7 +65,7 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "PressAnyKey"
-anims/PressAnyKey = SubResource( 3 )
+anims/PressAnyKey = SubResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -109,7 +109,7 @@ __meta__ = {
 margin_right = 337.0
 margin_bottom = 530.0
 size_flags_vertical = 3
-theme = SubResource( 6 )
+theme = SubResource( 3 )
 alignment = 1
 
 [node name="Cleared" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]

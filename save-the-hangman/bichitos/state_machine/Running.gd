@@ -2,6 +2,7 @@ extends "res://components/state_machine/state.gd"
 
 export var speed: int = 200
 export var out_of_bounds_margin: int = -50
+export var narration_box_size = 20
 export var max_rotation_speed: float = 0.3
 
 var motion = Vector2.ZERO
@@ -34,7 +35,7 @@ func update(delta):
 	
 	if _bichito.global_position.x < -out_of_bounds_margin || \
 		_bichito.global_position.x > _screen_size.x + out_of_bounds_margin || \
-		_bichito.global_position.y < -out_of_bounds_margin || \
+		_bichito.global_position.y < -out_of_bounds_margin + narration_box_size || \
 		_bichito.global_position.y > _screen_size.y + out_of_bounds_margin:
 			_go_to_center()
 

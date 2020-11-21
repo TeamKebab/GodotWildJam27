@@ -14,5 +14,8 @@ word = "PLOTHOLE"
 position = Vector2( 512, 480 )
 word = "PLOTHOLE"
 
-[node name="LevelComplete" parent="." index="6"]
+[node name="NarrationBox" parent="." index="6"]
+lines = [ "text 1", "text 2", "text 3", "text 4", "When something does not feel right..." ]
+
+[node name="LevelComplete" parent="." index="7"]
 level_num = 4

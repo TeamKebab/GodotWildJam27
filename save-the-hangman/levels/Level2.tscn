@@ -16,5 +16,8 @@ word = "LETTER"
 bichito_scene = ExtResource( 4 )
 max_bichitos = 1
 
-[node name="LevelComplete" parent="." index="5"]
+[node name="NarrationBox" parent="." index="5"]
+lines = [ "text 1", "text 2", "text 3", "text 4", "What are words made of?" ]
+
+[node name="LevelComplete" parent="." index="6"]
 level_num = 2

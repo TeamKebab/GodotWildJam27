@@ -14,10 +14,15 @@ func _ready():
 	_timer.connect("timeout", self, "_on_timer_timeout")
 	
 
+func start():
+	_timer.start()
+	
+		
 func destroy():
 	_timer.disconnect("timeout", self, "_on_timer_timeout")
 	for bichito in _container.get_children():
-		bichito.die()
+		if bichito.has_method("die"):
+			bichito.die()
 
 
 func _spawn():

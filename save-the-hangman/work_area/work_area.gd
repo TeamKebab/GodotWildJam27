@@ -1,5 +1,4 @@
 extends Node2D
-tool
 
 const Letter = preload("res://letters/letter.tscn")
 const WIDTH = 500
@@ -7,21 +6,7 @@ const HEIGHT = 200
 
 export var rotation_enabled: bool
 
-export var word: String setget _set_word
-func _set_word(new_word):	
-	word = new_word
-	
-	for child in $Letters.get_children():
-		$Letters.remove_child(child)
-	
-	var letters = word.length()
-	for i in letters:
-		if word[i] == " ":
-			continue
-		var letter = Letter.instance()
-		letter.letter = word[i]
-		letter.position = _random_position()
-		$Letters.add_child(letter)
+export var word: String
 
 
 onready var container: Node2D = $Letters
@@ -29,17 +14,30 @@ onready var drop_area: DropArea = $DropArea
 onready var rotation_block = $RotationBlock
 
 
-func _ready():
-	for letter in container.get_children():
-		letter.drop(drop_area)
-		init_rotation(letter)
-
-
 func _input(event):
 	if rotation_enabled and event is InputEventKey and event.pressed:
 		var event_letter = char(event.unicode).to_upper()
 		turn_letters(event_letter)
 
+
+func start():
+	for child in $Letters.get_children():
+		$Letters.remove_child(child)
+	
+	var letters = Random.shuffle_word(word)
+	for i in letters:
+		if i == " ":
+			continue
+		var letter = Letter.instance()
+		letter.letter = i
+		letter.position = _random_position()
+		$Letters.add_child(letter)
+		letter.drop(drop_area)
+		init_rotation(letter)
+		
+		yield(get_tree().create_timer(0.5), "timeout")
+
+		
 func random_position():
 	return global_position + _random_position()
 	
