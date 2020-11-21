@@ -13,6 +13,7 @@ func get_available_letters() -> Array:
 
 
 func pick():
+	.pick()
 	for _i in range(Random.randi(2) + 1):
 		target.turn()
 		

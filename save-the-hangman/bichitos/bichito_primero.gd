@@ -7,5 +7,6 @@ func get_available_letters() -> Array:
 
 
 func pick():
+	.pick()
 	target.pick(self)
 	_state_machine._change_state("Running")
