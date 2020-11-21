@@ -1,5 +1,7 @@
 extends MarginContainer
 
+signal finished
+
 export var talk_speed = 20
 export(Array, String) var lines: Array
 
@@ -27,9 +29,12 @@ func _process(delta):
 		
 	var total_letters = lines[current_line].length()
 	
+	if text_label.visible_characters >= total_letters:
+		return 
+		
 	time += delta
 	
-	text_label.visible_characters = floor(time * talk_speed)
+	text_label.visible_characters = min(total_letters, floor(time * talk_speed))
 	
 	if text_label.visible_characters >= total_letters:
 		booky.stop_talking()
@@ -37,6 +42,8 @@ func _process(delta):
 		if current_line < lines.size() - 1:
 			next_line.show()
 			can_advance = true
+		else:
+			emit_signal("finished")
 		
 
 func start_line():

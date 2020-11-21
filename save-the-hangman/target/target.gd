@@ -6,10 +6,11 @@ signal correct_letter
 
 export var target_letter = 'A'
 
+onready var drop_area = $DropArea
 
 func _ready():
-	$DropArea.connect("item_picked", self, "_on_item_picked")
-	$DropArea.connect("item_dropped", self, "_on_item_dropped")
+	drop_area.connect("item_picked", self, "_on_item_picked")
+	drop_area.connect("item_dropped", self, "_on_item_dropped")
 
 
 func is_correct_letter():

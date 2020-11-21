@@ -34,15 +34,20 @@ func start():
 	for i in letters:
 		if i == " ":
 			continue
-		var letter = Letter.instance()
-		letter.letter = i
-		letter.position = _random_position()
-		$Letters.add_child(letter)
-		letter.drop(drop_area)
-		init_rotation(letter)
 		
+		create_letter(i)		
 		yield(get_tree().create_timer(0.5), "timeout")
 
+
+func create_letter(i):
+	var letter = Letter.instance()
+	letter.letter = i
+	letter.position = _random_position()
+	$Letters.add_child(letter)
+	letter.drop(drop_area)
+	init_rotation(letter)	
+	return letter
+	
 		
 func random_position():
 	return global_position + _random_position()

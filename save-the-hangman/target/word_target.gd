@@ -35,7 +35,8 @@ func _ready():
 	for child in get_children():
 		child.connect("correct_letter", self, "_on_letter_placed")
 
-
+	
+	
 func get_letters() -> Array:
 	var letters = []		
 	for child in get_children():

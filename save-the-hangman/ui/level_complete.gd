@@ -19,6 +19,8 @@ func start():
 	
 func show_time():
 	var time = (OS.get_ticks_msec() - start_time) / 1000
+	Counter.time += time
+	
 	var minutes = time / 60
 	var seconds = time - minutes * 60
 	time_label.text = str(minutes) + ":" + str(seconds).pad_zeros(2)

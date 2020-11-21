@@ -7,6 +7,7 @@ const LEVELS = [
 	"res://levels/Level3.tscn",
 	"res://levels/Level4.tscn",
 	"res://levels/Level5.tscn",
+	"res://levels/game_over.tscn",
 ]
 
 
@@ -16,7 +17,12 @@ var current_level = 0
 func _ready():
 	set_current_scene()
 	
+
+func start():
+	current_level = 0
+	load_level(LEVELS[current_level])
 	
+		
 func set_current_scene():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)

@@ -13,3 +13,5 @@ var _bichitos = 0
 func new_bichito() -> int:
 	_bichitos += 1
 	return _bichitos
+	
+var time = 0
