@@ -14,7 +14,7 @@ func _ready():
 			$Container.add_child(label)
 		
 					
-func _process(delta):
+func _process(_delta):
 	find_node("WorkArea").text = "Free letters: " + String(_work_area.get_free_letters().size())
 	
 	for i in letters.size():

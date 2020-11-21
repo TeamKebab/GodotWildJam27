@@ -10,7 +10,7 @@ var can_advance = false
 var current_line = 0
 
 onready var text_label = find_node("TextLabel")
-onready var next_line = find_node("NextLine")
+onready var next_line_icon = find_node("NextLine")
 onready var booky = find_node("Booky")
 onready var next_sound = $NextSound
 
@@ -42,7 +42,7 @@ func _process(delta):
 		booky.stop_talking()
 		
 		if current_line < lines.size() - 1:
-			next_line.show()
+			next_line_icon.show()
 			can_advance = true
 		else:
 			emit_signal("finished")
@@ -53,7 +53,7 @@ func start_line():
 	text_label.visible_characters = 0
 	can_advance = false
 	time = 0
-	next_line.hide()
+	next_line_icon.hide()
 	booky.start_talking()			
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ui/level_complete.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bichitos/bichito_spawner.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ui/narration_box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://ui/book.png" type="Texture" id=9]
 [ext_resource path="res://levels/variation_1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://target/correct_word.wav" type="AudioStream" id=11]
 
 [node name="Level" type="Node"]
 script = ExtResource( 4 )
@@ -70,3 +71,7 @@ margin_bottom = 148.0
 lines = [ "Hi! I am Booky, CEO of Magical Book Defense and Security, pleased to meet you.", "We have detected a dust bunny breach in this place, which means...", "The dust bunnies are trying to steal the words from our favorite book! We have to stop them swiftly!", "In order to stop them, we have to answer questions with the letters they are trying to steal.", "Just try to drag and drop letters to form the answer!", "Once letters are on a spot, they will be safe from the green dust bunnies!", "First question: where are we?" ]
 
 [node name="LevelComplete" parent="." instance=ExtResource( 1 )]
+
+[node name="CompleteSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 512.038, 299.752 )
+stream = ExtResource( 11 )

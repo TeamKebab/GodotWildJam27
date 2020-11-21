@@ -12,7 +12,7 @@ func _ready():
 	$DropArea.connect("is_hovering_changed", self, "_on_is_hovering_changed")
 
 
-func pick_letter(letter):
+func pick_letter(_letter):
 	current_letter = null
 	_drop_area.disabled = false
 	
