@@ -22,6 +22,7 @@ font_data = ExtResource( 4 )
 
 [node name="NarrationBox" type="MarginContainer"]
 anchor_right = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
@@ -36,6 +37,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 1004.0
 margin_bottom = 148.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 5
 custom_constants/separation = 0
@@ -46,6 +48,7 @@ margin_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 128, 128 )
+mouse_filter = 2
 custom_styles/panel = ExtResource( 2 )
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
@@ -88,8 +91,8 @@ scroll_active = false
 
 [node name="NextLine" type="TextureRect" parent="HBoxContainer/MarginContainer/TextPanel/MarginContainer"]
 visible = false
-margin_left = 829.0
-margin_top = 62.0
+margin_left = 821.0
+margin_top = 54.0
 margin_right = 845.0
 margin_bottom = 78.0
 size_flags_horizontal = 8

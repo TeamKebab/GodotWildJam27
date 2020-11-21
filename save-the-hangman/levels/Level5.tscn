@@ -11,7 +11,6 @@ word = "THE DUST BUNNIES"
 word = "THE DUST BUNNIES"
 
 [node name="NarrationBox" parent="." index="7"]
-margin_bottom = 148.0
 lines = [ "text 1", "text 2", "text 3", "text 4", "Who is trying to steal our words?" ]
 
 [node name="LevelComplete" parent="." index="8"]

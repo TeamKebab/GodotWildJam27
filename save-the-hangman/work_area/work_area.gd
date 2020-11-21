@@ -5,6 +5,7 @@ const WIDTH = 500
 const HEIGHT = 200
 
 export var rotation_enabled: bool
+export var show_rotation_block: bool
 
 export var word: String
 
@@ -14,6 +15,11 @@ onready var drop_area: DropArea = $DropArea
 onready var rotation_block = $RotationBlock
 
 
+func _ready():
+	if show_rotation_block:
+		rotation_block.show()
+		rotation_block.disabled = false
+			
 func _input(event):
 	if rotation_enabled and event is InputEventKey and event.pressed:
 		var event_letter = char(event.unicode).to_upper()

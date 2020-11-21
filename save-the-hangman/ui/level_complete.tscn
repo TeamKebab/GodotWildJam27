@@ -8,7 +8,7 @@ resource_name = "PressAnyKey"
 length = 2.0
 loop = true
 tracks/0/type = "bezier"
-tracks/0/path = NodePath("Control/MarginContainer/VBoxContainer/PressAnyKey:modulate:r")
+tracks/0/path = NodePath("Control/MarginContainer/PressAnyKey:modulate:r")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -18,7 +18,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1, 2 )
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("Control/MarginContainer/VBoxContainer/PressAnyKey:modulate:g")
+tracks/1/path = NodePath("Control/MarginContainer/PressAnyKey:modulate:g")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -28,7 +28,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 2 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("Control/MarginContainer/VBoxContainer/PressAnyKey:modulate:b")
+tracks/2/path = NodePath("Control/MarginContainer/PressAnyKey:modulate:b")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -38,7 +38,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1, 2 )
 }
 tracks/3/type = "bezier"
-tracks/3/path = NodePath("Control/MarginContainer/VBoxContainer/PressAnyKey:modulate:a")
+tracks/3/path = NodePath("Control/MarginContainer/PressAnyKey:modulate:a")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -100,31 +100,23 @@ __meta__ = {
 margin_top = 20.0
 margin_right = 337.0
 margin_bottom = 580.0
-alignment = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
-margin_right = 337.0
-margin_bottom = 530.0
 size_flags_vertical = 3
 theme = SubResource( 3 )
 alignment = 1
 
-[node name="Cleared" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 206.0
+[node name="Cleared" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 221.0
 margin_right = 337.0
-margin_bottom = 263.0
+margin_bottom = 278.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Level 1 cleared"
 align = 1
 valign = 1
 
-[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 267.0
+[node name="Time" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 282.0
 margin_right = 337.0
-margin_bottom = 324.0
+margin_bottom = 339.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "10:53"
 align = 1
@@ -133,12 +125,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PressAnyKey" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="PressAnyKey" type="Label" parent="Control/MarginContainer"]
 visible = false
 modulate = Color( 1, 1, 1, 0.998965 )
-margin_top = 534.0
-margin_right = 337.0
-margin_bottom = 560.0
+margin_left = 43.0
+margin_top = 554.0
+margin_right = 293.0
+margin_bottom = 580.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Press any key to continue"
