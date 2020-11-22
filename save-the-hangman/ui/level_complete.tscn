@@ -3,7 +3,7 @@
 [ext_resource path="res://ui/Retro4.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/level_complete.gd" type="Script" id=2]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=1]
 resource_name = "PressAnyKey"
 length = 2.0
 loop = true
@@ -55,7 +55,7 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=4]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -65,7 +65,7 @@ script = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "PressAnyKey"
-anims/PressAnyKey = SubResource( 4 )
+anims/PressAnyKey = SubResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 visible = false
@@ -134,7 +134,7 @@ margin_right = 293.0
 margin_bottom = 580.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Press any key to continue"
 align = 1

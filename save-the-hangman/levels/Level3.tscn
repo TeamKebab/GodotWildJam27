@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://bichitos/bichito_cabron_rotador.tscn" type="PackedScene" id=1]
 [ext_resource path="res://bichitos/bichito_spawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/Level2.tscn" type="PackedScene" id=3]
-[ext_resource path="res://levels/variation_3.ogg" type="AudioStream" id=4]
 
 [node name="Level" instance=ExtResource( 3 )]
-music = ExtResource( 4 )
 
 [node name="WordTarget" parent="." index="1"]
 position = Vector2( 512, 200 )

@@ -27,7 +27,7 @@ func show_time():
 	
 	control.show()
 	
-	yield(get_tree().create_timer(3), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
 	
 	can_advance = true
 	press_any_key.show()

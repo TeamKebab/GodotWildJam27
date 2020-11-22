@@ -2,6 +2,7 @@ extends Node
 
 
 const LEVELS = [
+	"res://levels/start_screen.tscn",
 	"res://levels/Level1.tscn",
 	"res://levels/Level2.tscn",
 	"res://levels/Level3.tscn",
