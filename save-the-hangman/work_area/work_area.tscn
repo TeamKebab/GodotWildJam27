@@ -12,10 +12,11 @@ script = ExtResource( 2 )
 
 [node name="DropArea" parent="." instance=ExtResource( 1 )]
 shape = SubResource( 1 )
+snap_to_center = false
 
 [node name="RotationBlock" parent="." instance=ExtResource( 3 )]
 visible = false
-position = Vector2( 420.633, -170.199 )
+position = Vector2( 420.633, -306.199 )
 disabled = true
 
 [node name="Letters" type="Node2D" parent="."]

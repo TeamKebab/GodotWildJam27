@@ -6,7 +6,7 @@ var out_of_bounds_margin = 50
 
 var bichitos = []
 
-onready var screen_size = OS.get_screen_size()
+onready var screen_size = Vector2(1024,600)
 onready var positions = [
 	Vector2(0, -out_of_bounds_margin),
 	Vector2(screen_size.x / 3, -out_of_bounds_margin),

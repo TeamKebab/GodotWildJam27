@@ -5,7 +5,7 @@ export var speed = 100
 
 var move = false
 
-onready var screen_size = OS.get_screen_size()
+onready var screen_size = Vector2(1024,600)
 onready var motion = screen_size.normalized() * speed
 
 func _ready():

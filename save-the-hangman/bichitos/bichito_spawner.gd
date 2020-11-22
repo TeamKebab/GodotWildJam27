@@ -4,7 +4,7 @@ class_name BichitoSpawner
 export(PackedScene) var bichito_scene
 export var max_bichitos:int = 3
 
-onready var _screen_size = get_viewport().size
+onready var _screen_size = Vector2(1024,600)
 
 onready var _container = $Bichitos
 onready var _timer = $Timer

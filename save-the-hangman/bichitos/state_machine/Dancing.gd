@@ -7,7 +7,7 @@ export var max_rotation_speed: float = 0.3
 
 var motion = Vector2.ZERO
 
-onready var _screen_size = get_viewport().size
+onready var _screen_size = Vector2(1024, 600)
 
 onready var _state_machine = get_parent()
 onready var _bichito = _state_machine.get_parent()

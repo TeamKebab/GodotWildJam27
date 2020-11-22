@@ -5,7 +5,7 @@ export var speed: int = 50
 
 var destination: Vector2
 
-onready var _screen_size = get_viewport().size
+onready var _screen_size = Vector2(1024, 600)
 
 onready var _state_machine = get_parent()
 onready var _bichito = _state_machine.get_parent()
