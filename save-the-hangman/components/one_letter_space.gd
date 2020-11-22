@@ -14,7 +14,7 @@ func pick_letter(_letter):
 	_drop_area.disabled = false
 	
 	
-func drop_letter(letter):
+func drop_letter(_letter):
 	_drop_area.disabled = true
 
 

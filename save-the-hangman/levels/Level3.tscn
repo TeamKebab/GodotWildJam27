@@ -21,7 +21,7 @@ bichito_scene = ExtResource( 1 )
 max_bichitos = 2
 
 [node name="NarrationBox" parent="." index="7"]
-lines = [ "text 1", "text 2", "text 3", "text 4", "Those things that show up in the index" ]
+lines = [ "Orange dust bunnies have appeared! They can rotate letters and mess with our brains!", "WE'RE ALL GONNA DIE!!!", "OK, don't freak out, Booky, remember your training...", "Just press the letter you want to rotate on that human invention called \"KEYBOARD\" to restore the balance.", "And don't forget all letters have to be in their righteous position to solve the riddle!", "Third riddle: those things that show up in the index..." ]
 
 [node name="LevelComplete" parent="." index="8"]
 level_num = 3

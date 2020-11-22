@@ -1,20 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://levels/Level3.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://levels/variation_4.ogg" type="AudioStream" id=3]
 
 [node name="Level" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 music = ExtResource( 3 )
 
 [node name="WordTarget" parent="." index="1"]
 word = "PLOTHOLE"
 
 [node name="WorkArea" parent="." index="2"]
+position = Vector2( 512, 480 )
 show_rotation_block = true
 word = "PLOTHOLE"
 
 [node name="NarrationBox" parent="." index="7"]
-lines = [ "text 1", "text 2", "text 3", "text 4", "When something does not feel right..." ]
+margin_bottom = 148.0
+talk_speed = 100
+lines = [ "OK, so these dust bunnies like to play hard...", "Now we have duplicates of the same letter in different rotation states. Lucky for us, I brought a \"Safe Rotation Zone\" (name pending approval) with me this time.", "Just place there a letter that you don't want to be rotated when you command it (aka pressing the letter on your \"KEYBOARD\").", "It will also be safe from orange dust bunnies there.", "I think I don't have enough grey matter to help you on this one, so you are on your own. HAHAAAAAA!!!", "Fourth riddle: when something does not feel right in a story..." ]
 
 [node name="LevelComplete" parent="." index="8"]
 level_num = 4
