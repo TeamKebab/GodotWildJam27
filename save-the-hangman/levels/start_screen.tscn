@@ -196,10 +196,9 @@ script = ExtResource( 5 )
 stream = null
 
 [node name="Bichito3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 711.696, 370.082 )
+position = Vector2( 276.257, 285.325 )
 
 [node name="Sprite" parent="Bichito3" index="1"]
-position = Vector2( -427.018, -118.366 )
 texture = ExtResource( 8 )
 
 [node name="AnimationPlayer" parent="Bichito3" index="2"]

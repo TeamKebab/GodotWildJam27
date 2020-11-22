@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 func _ready():
-	volume_db = -5
+	volume_db = -10
 	stream = load("res://levels/variation_1.ogg")
 	play()
 
