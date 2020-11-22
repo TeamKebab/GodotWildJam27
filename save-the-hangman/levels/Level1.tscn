@@ -69,7 +69,7 @@ __meta__ = {
 [node name="NarrationBox" parent="." instance=ExtResource( 8 )]
 margin_bottom = 148.0
 talk_speed = 100
-lines = [ "Hi! I am Booky, CEO of Magical Book Defense and Security, pleased to meet you.", "We have detected a dust bunny breach in this place, which means...", "The dust bunnies are trying to steal the words from our favorite book! We have to stop them swiftly!", "In order to stop them, we have to answer questions with the letters they are trying to steal.", "Just try to drag and drop letters to form the answer!", "Once letters are on a spot, they will be safe from the green dust bunnies!", "First question: where are we?" ]
+lines = [ "Hi! I am Booky, CEO of Magical Book Defense and Security, pleased to meet you.", "We have detected a dust bunny breach in this place, which means...", "The dust bunnies are trying to steal the words from our favorite book! We have to stop them swiftly!", "In order to stop them, we have to answer questions with the letters they are trying to steal.", "Just try to drag and drop letters to form the answer!", "Once letters are on a spot, they will be safe from the green dust bunnies!", "If they get close or steal your letters, just click on them to make them go POOF!", "First question: where are we?" ]
 
 [node name="LevelComplete" parent="." instance=ExtResource( 1 )]
 

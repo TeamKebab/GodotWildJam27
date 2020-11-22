@@ -7,7 +7,6 @@
 [node name="Level" instance=ExtResource( 3 )]
 
 [node name="WordTarget" parent="." index="1"]
-position = Vector2( 512, 200 )
 word = "CHAPTER"
 
 [node name="WorkArea" parent="." index="2"]
