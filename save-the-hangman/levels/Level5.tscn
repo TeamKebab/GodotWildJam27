@@ -1,10 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://levels/Level4.tscn" type="PackedScene" id=1]
-[ext_resource path="res://levels/variation_5.ogg" type="AudioStream" id=3]
 
 [node name="Level" instance=ExtResource( 1 )]
-music = ExtResource( 3 )
 
 [node name="WordTarget" parent="." index="1"]
 word = "THE DUST BUNNIES"
@@ -13,7 +11,7 @@ word = "THE DUST BUNNIES"
 word = "THE DUST BUNNIES"
 
 [node name="NarrationBox" parent="." index="7"]
-lines = [ "THIS IS WAR!", "Now we have to solve 3 words?!??!?! ", "WHAT THE %#@&, DUST BUNNIES? YOU THINK YOU BETTER THAN BOOKY?!?!??!", "Anyway, use all you've learned on your journey, young padawan. I'll see you on the other side.", "Fifth riddle: who is trying to steal our words? who is our archenemies? WHAT'S THE NAME OF THE GAME?!?!" ]
+lines = [ "THIS IS WAR!", "Now we have to solve 3 words?!??!?! ", "WHAT THE %#@&, DUST BUNNIES? YOU THINK YOU BETTER THAN BOOKY?!?!??!", "Anyway, use all you've learned on your journey, young padawan. I'll see you on the other side.", "Fifth riddle: who is trying to steal our words? who are our archenemies? WHAT'S THE NAME OF THE GAME?!?!" ]
 
 [node name="LevelComplete" parent="." index="8"]
 level_num = 5

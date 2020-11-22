@@ -1,8 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ui/Retro4.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://ui/book.png" type="Texture" id=2]
 [ext_resource path="res://levels/start_screen.gd" type="Script" id=3]
+[ext_resource path="res://bichitos/bichito.tscn" type="PackedScene" id=4]
+[ext_resource path="res://bichitos/state_machine/Dancing.gd" type="Script" id=5]
+[ext_resource path="res://bichitos/bichito.png" type="Texture" id=6]
+[ext_resource path="res://bichitos/bichito_cabron.png" type="Texture" id=7]
+[ext_resource path="res://bichitos/bichito_maximo.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
@@ -68,6 +73,38 @@ tracks/3/keys = {
 size = 32
 font_data = ExtResource( 1 )
 
+[sub_resource type="Animation" id=6]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
 [node name="Level" type="Node"]
 script = ExtResource( 3 )
 
@@ -130,3 +167,52 @@ custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Press any key to continue"
 align = 1
 valign = 1
+
+[node name="Bichito" parent="." instance=ExtResource( 4 )]
+position = Vector2( 711.696, 370.082 )
+
+[node name="Sprite" parent="Bichito" index="1"]
+texture = ExtResource( 6 )
+
+[node name="Dancing" type="Node" parent="Bichito/StateMachine" index="0"]
+script = ExtResource( 5 )
+
+[node name="AppearSound" parent="Bichito" index="4"]
+stream = null
+
+[node name="Bichito2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 410.536, 456.984 )
+
+[node name="Sprite" parent="Bichito2" index="1"]
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" parent="Bichito2" index="2"]
+anims/Default = SubResource( 6 )
+
+[node name="Dancing" type="Node" parent="Bichito2/StateMachine" index="0"]
+script = ExtResource( 5 )
+
+[node name="AppearSound" parent="Bichito2" index="4"]
+stream = null
+
+[node name="Bichito3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 711.696, 370.082 )
+
+[node name="Sprite" parent="Bichito3" index="1"]
+position = Vector2( -427.018, -118.366 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" parent="Bichito3" index="2"]
+anims/Default = SubResource( 7 )
+
+[node name="Dancing" type="Node" parent="Bichito3/StateMachine" index="0"]
+script = ExtResource( 5 )
+
+[node name="AppearSound" parent="Bichito3" index="4"]
+stream = null
+
+[editable path="Bichito"]
+
+[editable path="Bichito2"]
+
+[editable path="Bichito3"]
