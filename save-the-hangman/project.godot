@@ -56,8 +56,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GodotWildJam27"
-run/main_scene="res://levels/Level1.tscn"
+config/name="TheDustBunnies"
+run/main_scene="res://levels/start_screen.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -70,6 +70,12 @@ SceneLoader="*res://globals/scene_loader.gd"
 [debug]
 
 gdscript/warnings/return_value_discarded=false
+
+[display]
+
+window/size/test_width=1024
+window/size/test_height=600
+window/stretch/mode="2d"
 
 [importer_defaults]
 

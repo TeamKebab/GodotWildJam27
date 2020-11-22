@@ -4,7 +4,7 @@ on: push
 env:
     GODOT_VERSION: 3.2.3
     EXPORT_NAME: save-the-hangman
-    ITCH_GAME: save-the-hangman
+    ITCH_GAME: the-dust-bunnies
     ITCH_USER: team-kebab
 
 jobs:
