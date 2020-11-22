@@ -59,7 +59,7 @@ position = Vector2( 64.0723, 63.4049 )
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 margin_left = 128.0
 margin_right = 984.0
-margin_bottom = 91.0
+margin_bottom = 81.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 custom_constants/margin_top = 1
@@ -67,7 +67,7 @@ custom_constants/margin_top = 1
 [node name="TextPanel" type="PanelContainer" parent="HBoxContainer/MarginContainer"]
 margin_top = 1.0
 margin_right = 856.0
-margin_bottom = 91.0
+margin_bottom = 81.0
 grow_vertical = 2
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -78,7 +78,7 @@ custom_styles/panel = SubResource( 1 )
 margin_left = 1.0
 margin_top = 5.0
 margin_right = 853.0
-margin_bottom = 85.0
+margin_bottom = 75.0
 custom_constants/margin_right = 7
 custom_constants/margin_left = 7
 custom_constants/margin_bottom = 2
@@ -86,21 +86,21 @@ custom_constants/margin_bottom = 2
 [node name="TextLabel" type="RichTextLabel" parent="HBoxContainer/MarginContainer/TextPanel/MarginContainer"]
 margin_left = 7.0
 margin_right = 845.0
-margin_bottom = 78.0
+margin_bottom = 68.0
 rect_clip_content = false
 size_flags_vertical = 3
 custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
 visible_characters = 0
-text = "The dust bunnies are trying to steal the words from our favorite book! We have to stop them swiftly!"
 fit_content_height = true
 scroll_active = false
 
 [node name="NextLine" type="TextureRect" parent="HBoxContainer/MarginContainer/TextPanel/MarginContainer"]
 visible = false
 margin_left = 821.0
-margin_top = 54.0
+margin_top = 44.0
 margin_right = 845.0
-margin_bottom = 78.0
+margin_bottom = 68.0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 texture = ExtResource( 5 )

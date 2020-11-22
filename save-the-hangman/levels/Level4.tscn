@@ -19,7 +19,7 @@ word = "PLOTHOLE"
 [node name="NarrationBox" parent="." index="7"]
 margin_bottom = 148.0
 talk_speed = 100
-lines = [ "OK, so these dust bunnies like to play hard...", "Now we have duplicates of the same letter in different rotation states. Lucky for us, I brought a \"Safe Rotation Zone\" (name pending approval) with me this time.", "Just place there a letter that you don't want to be rotated when you command it (aka pressing the letter on your \"KEYBOARD\").", "It will also be safe from orange dust bunnies there.", "I think I don't have enough grey matter to help you on this one, so you are on your own. HAHAAAAAA!!!", "Fourth riddle: when something does not feel right in a story..." ]
+lines = [ "OK, so these dust bunnies like to play hard...", "Now we have duplicates of the same letter in different rotation states.", "Lucky for us, I brought a \"Safe Rotation Zone\" [img]res://work_area/rotation_block_icon.png[/img] (name pending approval) with me this time.", "Just place there a letter that you don't want to be rotated when you command it (aka pressing the letter on your \"KEYBOARD\").", "It will also be safe from orange dust bunnies there.", "I think I don't have enough grey matter to help you on this one, so you are on your own. HAHAAAAAA!!!", "Fourth riddle: when something does not feel right in a story..." ]
 
 [node name="LevelComplete" parent="." index="8"]
 level_num = 4

@@ -49,7 +49,7 @@ func _process(delta):
 		
 
 func start_line():
-	text_label.text = lines[current_line]	
+	text_label.bbcode_text = lines[current_line]	
 	text_label.visible_characters = 0
 	can_advance = false
 	time = 0
