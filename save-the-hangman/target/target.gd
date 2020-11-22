@@ -15,6 +15,7 @@ func _ready():
 
 
 func is_correct_letter():
+	var current_letter = get_current_letter()
 	return current_letter != null and current_letter.is_correct_letter(target_letter)
 
 

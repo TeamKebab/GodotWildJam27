@@ -74,8 +74,9 @@ func turn_letters(event_letter):
 
 func get_rotation_locked_letters():
 	var letters = []
-	if rotation_block.current_letter != null:
-		letters.append(rotation_block.current_letter)
+	var letter = rotation_block.get_current_letter()
+	if letter != null:
+		letters.append(letter)
 		
 	return letters
 

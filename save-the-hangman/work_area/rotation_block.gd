@@ -14,6 +14,7 @@ func _ready():
 	
 	
 func has_letter(letter):
+	var current_letter = get_current_letter()
 	return current_letter == letter
 
 

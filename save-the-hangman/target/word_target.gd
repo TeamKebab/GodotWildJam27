@@ -29,19 +29,15 @@ func _set_word(new_word):
 		target.target_letter = word[i]
 		target.position.x = (i - (num_letters - 1.0) / 2) * (LETTER_WIDTH + LETTER_SPACE)
 		add_child(target)
+		target.connect("correct_letter", self, "_on_letter_placed")
 
-
-func _ready():
-	for child in get_children():
-		child.connect("correct_letter", self, "_on_letter_placed")
-
-	
 	
 func get_letters() -> Array:
 	var letters = []		
 	for child in get_children():
-		if child.current_letter != null:
-			letters.append(child.current_letter)
+		var letter = child.get_current_letter()
+		if letter != null:
+			letters.append(letter)
 	
 	return letters
 	
